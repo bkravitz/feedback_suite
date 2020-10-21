@@ -1,0 +1,36 @@
+Explicit feedback for climate modeling
+Version 1.0
+
+Copyright (C) 2020 Ben Kravitz (bkravitz@iu.edu or ben.kravitz.work@gmail.com)
+Last updated 21 October 2020
+
+This is a suite of code designed to introduce an explicit feedback loop into the Community Earth System Model.  The code works with CESM 1.2.0 and 2.1.x.  It has not been tested with any other version.
+
+Files included in this suite:
+- main.py:  This is the main script that should be called from the short term archiving script st_archive.  This also contains the "namelist" for the main script.  User-modifiable things are in here.
+- driver.py:  This contains all of the subroutines that the main script uses and calls them in the right order.
+- commonroutines.py:  This contains common routines for analysis (like global mean).
+- PIcontrol.py:  This is an implementation of proportional-integral control.  This is user modifiable.
+
+
+References:
+
+MacMartin, D. G., B. Kravitz, D. W. Keith, and A. Jarvis (2014), Dynamics of the coupled human-climate system resulting from closed-loop control of solar geoengineering, Climate Dynamics, 43, 243-258, doi:10.1007/s00382-013-1822-9.
+
+Kravitz, B., D. G. MacMartin, D. T. Leedal, P. J. Rasch, and A. J. Jarvis (2014), Explicit feedback and the management of uncertainty in meeting climate objectives with solar geoengineering, Environmental Research Letters, 9, 044006, doi: 10.1088/1748-9326/9/4/044006.
+
+Kravitz, B., D. G. MacMartin, P. J. Rasch, and A. J. Jarvis (2015), A new method of comparing forcing agents in climate models, Journal of Climate, 28, 8203-8218, doi: 10.1175/JCLI-D-14-00663.1.
+
+Kravitz, B., D. G. MacMartin, H. Wang, and P. J. Rasch (2016), Geoengineering as a design problem, Earth System Dynamics, 7, 469-497, doi:10.5194/esd-7-469-2016.
+
+MacMartin, D. G., B. Kravitz, S. Tilmes, J. H. Richter, M. J. Mills, J.-F. Lamarque, J. J. Tribbia, and F. Vitt (2017), The climate response to stratospheric aerosol geoengineering can be tailored using multiple injection locations, Journal of Geophysical Research, 122, 12574-12590, doi:10.1002/2017JD026868.
+
+Kravitz, B., D. G. MacMartin, M. J. Mills, J. H. Richter, S. Tilmes, J.-F. Lamarque, J. J. Tribbia, and F. Vitt (2017), First simulations of designing stratospheric sulfate aerosol geoengineering to meet multiple simultaneous climate objectives, Journal of Geophysical Research, 122, 12616-12634, doi:10.1002/2017JD026874.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>.
