@@ -30,13 +30,13 @@
 # a string by putting it in quotes ''.  All lines beginning with # are comments.
 
 #### USER-SPECIFIED CONTROL PARAMETERS ####
-#refvals=[288.13,0.76,-5.98] original reference values
-refvals=[288.1628,0.7512,-5.9723] # updated to be average over years 2010-2029
+#refvals=[288.13,0.76,-5.98] reference values for CESM2(WACCM6) (Tilmes et al. 2020) 2020-2039
+refvals=[288.64,0.8767,-5.89] # updated to be average over years 2010-2029
 #refvals=[288.21,0.594,-6.006] # new version of the model (GLENS values)
-kivals=[0.028,0.13,0.39]
-kpvals=[0.028,0.13,0.39]
-firstyear=2020
-baseyear=2020
+kivals=[0.0183,0.0753,0.3120]
+kpvals=[0.0183,0.0753,0.3120]
+firstyear=2035
+baseyear=2030
 
 #### USER SPECIFIED CALCULATIONS ####
 logfilename='ControlLog_'+runname+'.txt'
@@ -74,9 +74,9 @@ dt=timestamp-baseyear
 #l1hat=-0.005*dt
 #l2hat=0.006*dt
 # updated based on feedback simulation
-l0hat=0.0079*dt
-l1hat=-0.00025758*dt
-l2hat=0.0063*dt
+l0hat=0.0035*dt
+l1hat=-0.000*dt
+l2hat=0.00*dt
 
 # feedback
 l0kp1=kpvals[0]*de[0]+kivals[0]*sumde[0]
@@ -120,14 +120,14 @@ writelog(maindir+'/'+logfilename,linestowrite)
 
 
 #### USER SPECIFIED OUTPUT ####
-nlname1="/glade/u/home/bkravitz/inputfiles/SO2_geoeng_2-2499_serial_1Tg_22.7-22.9km_30.6S_180E_0.95x1.25_c160502.nc"
-nlname2="/glade/u/home/bkravitz/inputfiles/SO2_geoeng_2-2499_serial_1Tg_24.9-25.1km_15.6S_180E_0.95x1.25_c160502.nc"
-nlname3="/glade/u/home/bkravitz/inputfiles/SO2_geoeng_2-2499_serial_1Tg_24.9-25.1km_15.6N_180E_0.95x1.25_c160502.nc"
-nlname4="/glade/u/home/bkravitz/inputfiles/SO2_geoeng_2-2499_serial_1Tg_22.7-22.9km_30.6N_180E_0.95x1.25_c160502.nc"
+nlname1="/glade/work/geostrat/injection_files/SO2_geoeng_2020-2100_serial_1Tg_21.9-22.1km_30.6S_180E_0.95x1.25_cANN210319.nc"
+nlname2="/glade/work/geostrat/injection_files/SO2_geoeng_2020-2100_serial_1Tg_21.9-22.1km_15.6S_180E_0.95x1.25_cANN210319.nc"
+nlname3="/glade/work/geostrat/injection_files/SO2_geoeng_2020-2100_serial_1Tg_21.9-22.1km_15.6N_180E_0.95x1.25_cANN210319.nc"
+nlname4="/glade/work/geostrat/injection_files/SO2_geoeng_2020-2100_serial_1Tg_21.9-22.1km_30.6N_180E_0.95x1.25_cANN210319.nc"
 
-nlval1="         'SO2    -> "+str(q[0])[1:-1]+"*/glade/u/home/bkravitz/inputfiles/SO2_geoeng_2-2499_serial_1Tg_22.7-22.9km_30.6S_180E_0.95x1.25_c160502.nc'"+"\n"
-nlval2="         'SO2    -> "+str(q[1])[1:-1]+"*/glade/u/home/bkravitz/inputfiles/SO2_geoeng_2-2499_serial_1Tg_24.9-25.1km_15.6S_180E_0.95x1.25_c160502.nc',"+"\n"
-nlval3="         'SO2    -> "+str(q[2])[1:-1]+"*/glade/u/home/bkravitz/inputfiles/SO2_geoeng_2-2499_serial_1Tg_24.9-25.1km_15.6N_180E_0.95x1.25_c160502.nc',"+"\n"
-nlval4="         'SO2    -> "+str(q[3])[1:-1]+"*/glade/u/home/bkravitz/inputfiles/SO2_geoeng_2-2499_serial_1Tg_22.7-22.9km_30.6N_180E_0.95x1.25_c160502.nc',"+"\n"
+nlval1="         'SO2    -> "+str(q[0])[1:-1]+"*/glade/work/geostrat/injection_files/SO2_geoeng_2020-2100_serial_1Tg_21.9-22.1km_30.6S_180E_0.95x1.25_cANN210319.nc'"+"\n"
+nlval2="         'SO2    -> "+str(q[1])[1:-1]+"*/glade/work/geostrat/injection_files/SO2_geoeng_2020-2100_serial_1Tg_21.9-22.1km_15.6S_180E_0.95x1.25_cANN210319.nc',"+"\n"
+nlval3="         'SO2    -> "+str(q[2])[1:-1]+"*/glade/work/geostrat/injection_files/SO2_geoeng_2020-2100_serial_1Tg_21.9-22.1km_15.6N_180E_0.95x1.25_cANN210319.nc',"+"\n"
+nlval4="         'SO2    -> "+str(q[3])[1:-1]+"*/glade/work/geostrat/injection_files/SO2_geoeng_2020-2100_serial_1Tg_21.9-22.1km_30.6N_180E_0.95x1.25_cANN210319.nc',"+"\n"
 
 nlvals=[nlname1,nlval1,nlname2,nlval2,nlname3,nlval3,nlname4,nlval4]
