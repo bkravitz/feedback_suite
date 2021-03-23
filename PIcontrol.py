@@ -68,20 +68,27 @@ else:
     sumde=numpy.array([sumdt0,sumdt1,sumdt2])
 
 dt=timestamp-baseyear
-
+dt2=timestamp-firstyear
 # feedforward
 #l0hat=0.011*dt
 #l1hat=-0.005*dt
 #l2hat=0.006*dt
 # updated based on feedback simulation
-l0hat=0.0035*dt
+l0hat=0.00347*dt
 l1hat=-0.000*dt
 l2hat=0.00*dt
 
+x_ramp = 5 # defines a range of years over which the feedback is ramped up
+
+if (dt2<5):
+    ramp_up = dt2/x_ramp
+else:
+    ramp_up = 1
+
 # feedback
-l0kp1=kpvals[0]*de[0]+kivals[0]*sumde[0]
-l1kp1=kpvals[1]*de[1]+kivals[1]*sumde[1]-0.75*l0kp1
-l2kp1=kpvals[2]*de[2]+kivals[2]*sumde[2]-l0kp1-l1kp1
+l0kp1=(kpvals[0]*de[0]+kivals[0]*sumde[0])*ramp_up
+l1kp1=(kpvals[1]*de[1]+kivals[1]*sumde[1]-0.5*l0kp1)*ramp_up
+l2kp1=(kpvals[2]*de[2]+kivals[2]*sumde[2]-l0kp1)*ramp_up
 
 # all of the feeds
 l0step4=l0kp1+l0hat
