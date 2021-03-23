@@ -37,6 +37,7 @@ kivals=[0.0183,0.0753,0.3120]
 kpvals=[0.0183,0.0753,0.3120]
 firstyear=2035
 baseyear=2030
+x_ramp = 5.0 # defines a range of years over which the feedback is ramped up
 
 #### USER SPECIFIED CALCULATIONS ####
 logfilename='ControlLog_'+runname+'.txt'
@@ -78,12 +79,9 @@ l0hat=0.00347*dt
 l1hat=-0.000*dt
 l2hat=0.00*dt
 
-x_ramp = 5 # defines a range of years over which the feedback is ramped up
-
-if (dt2<5):
-    ramp_up = dt2/x_ramp
-else:
-    ramp_up = 1
+ramp_up = 1.0
+if (dt2<x_ramp):
+    ramp_up = dt2 / x_ramp
 
 # feedback
 l0kp1=(kpvals[0]*de[0]+kivals[0]*sumde[0])*ramp_up

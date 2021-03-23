@@ -1,8 +1,8 @@
 Explicit feedback for climate modeling
-Version 1.0
+Version 1.1
 
 Copyright (C) 2020 Ben Kravitz (bkravitz@iu.edu or ben.kravitz.work@gmail.com)
-Last updated 21 October 2020
+Last updated 23 March 2021 by Daniele Visioni
 
 This is a suite of code designed to introduce an explicit feedback loop into the Community Earth System Model.  The code works with CESM 1.2.0 and 2.1.x.  It has not been tested with any other version.
 
