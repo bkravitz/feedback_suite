@@ -5,13 +5,13 @@ Copyright (C) 2020 Ben Kravitz (bkravitz@iu.edu or ben.kravitz.work@gmail.com)
 Last updated 23 March 2021 by Daniele Visioni
 
 This is a suite of code designed to introduce an explicit feedback loop into the Community Earth System Model.  The code works with CESM 1.2.0 and 2.1.x.  It has not been tested with any other version.
+In version 1.1 a ramp up option as been included in case the user needs a certain amount of years where the feedback is slowly ramped up.
 
 Files included in this suite:
 - main.py:  This is the main script that should be called from the short term archiving script st_archive.  This also contains the "namelist" for the main script.  User-modifiable things are in here.
 - driver.py:  This contains all of the subroutines that the main script uses and calls them in the right order.
 - commonroutines.py:  This contains common routines for analysis (like global mean).
 - PIcontrol.py:  This is an implementation of proportional-integral control.  This is user modifiable.
-
 
 References:
 

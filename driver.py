@@ -361,4 +361,4 @@ execfile(pathtocontrol)
 fixnamelist2('user_nl_cam',nlvals,casepath)
 
 # populates the namelist
-os.system(casepath+'/preview_namelists')
+os.system(casepath+'/preview_namelists --component atm')
